@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class UserDomicilio extends Model
 {
@@ -19,4 +20,8 @@ class UserDomicilio extends Model
         'cp',
         'ciudad',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
