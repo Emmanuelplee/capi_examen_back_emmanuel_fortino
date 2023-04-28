@@ -22,16 +22,16 @@ class UserController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'edad' => $age,
-                    'user_domicilio' => (object)[
-                        'domicilio' => $user->userDomicilio->domicilio,
-                        'numero_exterior' => $user->userDomicilio->numero_exterior,
-                        'colonia' => $user->userDomicilio->colonia,
-                        'cp' => $user->userDomicilio->cp,
-                        'ciudad' => $user->userDomicilio->ciudad,
-                    ]
+                    'domicilio' => $user->userDomicilio->domicilio,
+                    'numero_exterior' => $user->userDomicilio->numero_exterior,
+                    'colonia' => $user->userDomicilio->colonia,
+                    'cp' => $user->userDomicilio->cp,
+                    'ciudad' => $user->userDomicilio->ciudad,
+                    // 'user_domicilio' => (object)[
+                    // ]
                 ];
             });
         }
-        return response()->json(['ok'=> true, 'data' => $data]);
+        return response()->json($data);
     }
 }
